@@ -64,5 +64,6 @@ export class ProductListComponent {
     showImage: boolean = false;
     toggleImage(): void{
       this.showImage = !this.showImage
-    }
+    };
+    listFiltered: string = '';
 }
