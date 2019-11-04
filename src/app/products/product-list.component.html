@@ -5,7 +5,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-md-2">Filter by:</div>
-            <div class="col-md-4"><input type="search" name="filter" id="filter" [(ngModel)]="listFiltered"></div>
+            <div class="col-md-4"><input type="search" name="filter" id="filter" [(ngModel)]="listFilter"></div>
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -30,7 +30,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let product of products">
+                    <tr *ngFor="let product of filteredProducts">
                         <td>
                             <img [src]="product.imageUrl"
                                 [alt]="product.productName"
