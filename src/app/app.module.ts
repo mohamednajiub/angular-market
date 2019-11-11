@@ -8,6 +8,7 @@ import { StarsComponent } from './shared/stars/stars.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { RouterModule } from '@angular/router';
+import { ProductDetailsGuard } from './shared/guards/product-details.guard';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     RouterModule.forRoot([
       {path: 'products', component: ProductListComponent},
-      {path: 'products/:id', component: ProductDetailComponent},
+      {path: 'products/:id', canActivate: [ProductDetailsGuard], component: ProductDetailComponent},
       {path: '**', redirectTo: '', pathMatch: 'full'}
     ])
   ],
